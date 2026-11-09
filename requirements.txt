@@ -1,0 +1,5 @@
+# Base dependencies for the pipeline (translation, TTS, judging via REST APIs)
+requests
+python-dotenv
+# Target model (local Gemma 4) needs more — install separately:
+#   pip install -r experiments/requirements-gemma4.txt

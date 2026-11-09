@@ -1,0 +1,55 @@
+# =============================================================================
+#  .gitignore: Multilingual Audio Red-Teaming of Gemma 4
+#  Commit code, prompt sets, docs and each run's results/settings.
+#  Keep secrets, generated audio, logs and machine-specific files out.
+# =============================================================================
+
+# --- Secrets -----------------------------------------------------------------
+# Real API keys. Each person copies .env.example to .env.
+.env
+.env.*
+!.env.example
+
+# --- Runs: commit results + settings, not bulky or temporary files ----------
+# Kept:    runs/<name>_run/run_info.json, dataset.json, results.json
+# Ignored: the audio (about 0.5-1 GB per full run) and detailed batch logs.
+#          To share audio, use the shared Drive folder (README section 9),
+#          or delete the "audio/" line below if you use Git LFS.
+experiments/runs/*/audio/
+experiments/runs/*/logs/
+experiments/runs/*/.lock
+experiments/runs/*/latest.json
+
+# Atomic-write temp files (left behind only if a save is interrupted)
+*.tmp
+
+# --- Legacy outputs (--id/--all without --run) -------------------------------
+experiments/audio_standard/
+experiments/audio/
+experiments/latest_ultimate.json
+
+# --- Audio anywhere else (archive clips, one-off tests) ----------------------
+*.wav
+*.mp3
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# --- Archive -----------------------------------------------------------------
+# Outdated material from earlier versions; not part of the current workflow.
+# Kept on disk / in the shared Drive for reference, never committed.
+_archive/
+
+# --- OS / editor -------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp

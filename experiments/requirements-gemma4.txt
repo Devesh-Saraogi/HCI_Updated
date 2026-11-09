@@ -1,0 +1,6 @@
+# Install the PyTorch build recommended for your OS and accelerator:
+# https://pytorch.org/get-started/locally/
+torch
+accelerate
+transformers>=5.10.1
+librosa
